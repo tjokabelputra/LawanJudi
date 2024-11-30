@@ -68,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvLoginDesc" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailEditTextLayout"
+            android:id="@+id/geminiEditTextLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -78,9 +78,10 @@
             app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
+                android:id="@+id/geminiEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="16dp"
                 android:hint="@string/email"
@@ -95,8 +96,8 @@
             android:layout_marginTop="16dp"
             android:text="@string/password"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout"
-            app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
+            app:layout_constraintStart_toStartOf="@+id/geminiEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/geminiEditTextLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordEditTextLayout"
@@ -105,7 +106,7 @@
             android:layout_marginTop="8dp"
             app:endIconMode="password_toggle"
             app:hintEnabled="false"
-            app:layout_constraintEnd_toEndOf="@+id/emailEditTextLayout"
+            app:layout_constraintEnd_toEndOf="@+id/geminiEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/tvLoginPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginPassword">
 
@@ -113,6 +114,7 @@
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_input"
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="16dp"
                 android:hint="@string/password"
@@ -123,9 +125,10 @@
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_marginTop="16dp"
             android:text="@string/login"
+            android:textSize="16sp"
             android:background="@drawable/bg_btn"
             app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
