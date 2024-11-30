@@ -123,12 +123,14 @@
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="16dp"
             android:text="@string/login"
+            android:background="@drawable/bg_btn"
             app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"
+            app:backgroundTint="@null"/>
 
         <View
             android:id="@+id/view"

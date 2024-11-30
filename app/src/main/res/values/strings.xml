@@ -16,4 +16,8 @@
     <string name="login_desc">Masukan dulu datamu</string>
     <string name="noacc">Belum memiliki akun?</string>
     <string name="clickhere">Daftar Disini</string>
+    <string name="education">Edukasi</string>
+    <string name="add">Buat Laporan</string>
+    <string name="history">Histori</string>
+    <string name="settings">Pengaturan</string>
 </resources>

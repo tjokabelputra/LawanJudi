@@ -60,12 +60,14 @@
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="24dp"
             android:text="@string/login"
+            android:background="@drawable/bg_btn"
             app:layout_constraintEnd_toEndOf="@+id/tvFunFact"
             app:layout_constraintStart_toStartOf="@+id/tvFunFact"
-            app:layout_constraintTop_toBottomOf="@+id/tvFunFact" />
+            app:layout_constraintTop_toBottomOf="@+id/tvFunFact"
+            app:backgroundTint="@null"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

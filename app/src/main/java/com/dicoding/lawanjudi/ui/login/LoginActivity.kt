@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.databinding.ActivityLoginBinding
+import com.dicoding.lawanjudi.ui.home.HomeActivity
 import com.dicoding.lawanjudi.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -16,9 +17,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         binding.tvClickHere.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnLogin.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }

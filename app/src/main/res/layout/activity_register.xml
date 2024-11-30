@@ -153,12 +153,14 @@
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginTop="24dp"
             android:text="@string/register"
+            android:background="@drawable/bg_btn"
             app:layout_constraintEnd_toEndOf="@+id/passwordEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/passwordEditTextLayout"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"
+            app:backgroundTint="@null"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline

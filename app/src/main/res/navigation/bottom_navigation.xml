@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@+id/navigation_education">
+
+    <fragment
+        android:id="@+id/navigation_education"
+        android:name="com.dicoding.lawanjudi.ui.education.EducationFragment"
+        android:label="@string/education"
+        tools:layout="@layout/fragment_education" />
+
+    <fragment
+        android:id="@+id/navigation_create"
+        android:name="com.dicoding.lawanjudi.ui.add.AddReportFragment"
+        android:label="@string/add"
+        tools:layout="@layout/fragment_add_report" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.dicoding.lawanjudi.ui.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_history"/>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.dicoding.lawanjudi.ui.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
