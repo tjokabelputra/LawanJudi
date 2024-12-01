@@ -28,4 +28,12 @@
     <string name="gemini_hint">Kirim Pesan ke Gemini</string>
     <string name="ask_gemini">Tanya Gemini</string>
     <string name="message">Message</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="dark_desc">Aktifkan mode gelap untuk tampilan yang nyaman di malam hari.</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="notification_setting">Matikan Notifikasi</string>
+    <string name="notif_desc">Matikan Notifikasi Saat Mendapatkan Hasil dari Analisis AI dan Mengirimkan Laporan</string>
+    <string name="log_out">Log Out Akun</string>
+    <string name="logout">Keluar</string>
 </resources>
