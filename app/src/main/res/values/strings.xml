@@ -8,12 +8,10 @@
     <string name="login">Masuk</string>
     <string name="register">Registrasi</string>
     <string name="register_title">Yuk, isi datamu dibawah ini!</string>
-    <string name="register_desc">Untuk bergabung dalam aksi melaporkan situs judi online yang tidak aman!</string>
     <string name="name">Nama</string>
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
     <string name="login_title">Sudah siap untuk melaporkan situs judi online?</string>
-    <string name="login_desc">Masukan dulu datamu</string>
     <string name="noacc">Belum memiliki akun?</string>
     <string name="clickhere">Daftar Disini</string>
     <string name="education">Edukasi</string>

@@ -5,19 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple700"
+    android:background="?attr/colorPrimary"
     tools:context=".ui.login.LoginActivity">
 
     <TextView
+        style="@style/TextContent.AppName"
         android:id="@+id/tvAppName"
         android:layout_width="144dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
         android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,41 +27,23 @@
         tools:ignore="MissingClass">
 
         <TextView
+            style="@style/TextContent.MainTitle"
             android:id="@+id/tvLoginTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:includeFontPadding="false"
             android:text="@string/login_title"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvLoginDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/login_desc"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/tvLoginTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
-
-        <TextView
+            style="@style/TextContent.Label"
             android:id="@+id/tvLoginEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/email"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/tvLoginDesc"
-            app:layout_constraintTop_toBottomOf="@+id/tvLoginDesc" />
+            app:layout_constraintStart_toStartOf="@+id/tvLoginTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/geminiEditTextLayout"
@@ -86,16 +64,15 @@
                 android:drawablePadding="16dp"
                 android:hint="@string/email"
                 android:inputType="text"
-                android:textColor="@color/black" />
+                android:textColor="?attr/colorOnPrimary" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            style="@style/TextContent.Label"
             android:id="@+id/tvLoginPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/password"
-            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/geminiEditTextLayout"
             app:layout_constraintTop_toBottomOf="@+id/geminiEditTextLayout" />
 
@@ -119,7 +96,7 @@
                 android:drawablePadding="16dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textColor="@color/black" />
+                android:textColor="?attr/colorOnPrimary" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -140,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:background="@color/lightgrey"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,27 +125,21 @@
             app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
         <TextView
+            style="@style/TextContent.NoAccount.Click"
             android:id="@+id/tvClickHere"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_med"
             android:text="@string/clickhere"
-            android:textColor="@color/bluelight"
             app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/tvNoAcc"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <TextView
+            style="@style/TextContent.NoAccount"
             android:id="@+id/tvNoAcc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_med"
-            android:gravity="end"
             android:text="@string/noacc"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/tvClickHere"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -176,7 +147,7 @@
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btnGoogle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"

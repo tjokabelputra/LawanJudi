@@ -1,7 +1,70 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources>
     <style name="Base.Theme.LawanJudi" parent="Theme.Material3.DayNight">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/purple800</item>
+        <item name="colorPrimaryVariant">@color/darkGrey</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorPrimaryContainer">@color/purple300</item>
+        <item name="colorOnPrimaryContainer">@color/darkGrey</item>
+
+        <item name="colorSecondary">@color/grey700</item>
+
+        <item name="colorTertiary">@android:color/transparent</item>
+    </style>
+
+    <style name="Theme.LawanJudi" parent="Base.Theme.LawanJudi" />
+
+    <style name="TextContent">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="TextContent.AppName">
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.MainTitle">
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.MainTitle.Landing">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextContent.MainDesc">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextContent.NoAccount">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:fontFamily">@font/roboto_med</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="TextContent.NoAccount.Click">
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="TextContent.EducationTitle">
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.EducationDesc">
+        <item name="android:layout_marginTop">16dp</item>
     </style>
 </resources>

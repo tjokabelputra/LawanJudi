@@ -5,19 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple700"
+    android:background="?attr/colorPrimary"
     tools:context=".ui.landing.MainActivity">
 
     <TextView
+        style="@style/TextContent.AppName"
         android:id="@+id/tvAppName"
         android:layout_width="144dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
         android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="48sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,30 +25,22 @@
         app:layout_constraintHeight_percent="0.65">
 
         <TextView
+            style="@style/TextContent.MainTitle.Landing"
             android:id="@+id/tvLandingTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
             android:text="@string/landing_title"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:includeFontPadding="false"/>
 
         <TextView
+            style="@style/TextContent.MainDesc"
             android:id="@+id/tvFunFact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/landing_funfact"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/tvLandingTitle"
             app:layout_constraintStart_toStartOf="@+id/tvLandingTitle"
             app:layout_constraintTop_toBottomOf="@+id/tvLandingTitle" />

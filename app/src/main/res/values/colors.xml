@@ -3,8 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lightpurp">#E8DEF8</color>
-    <color name="purple700">#9C27B0</color>
+    <color name="purple300">#BA68C8</color>
+    <color name="purple700">#7B1FA2</color>
+    <color name="purple800">#6A1B9A</color>
     <color name="lightgrey">#D9D9D9</color>
+    <color name="grey700">#616161</color>
+    <color name="darkGrey">#121212</color>
     <color name="bluelight">#007BFF</color>
+    <color name="blue">#1976D2</color>
     <color name="red">#F44336</color>
 </resources>

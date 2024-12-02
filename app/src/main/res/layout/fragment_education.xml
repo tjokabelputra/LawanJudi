@@ -7,28 +7,22 @@
     tools:context=".ui.education.EducationFragment">
 
     <TextView
+        style="@style/TextContent.HomeTitle"
         android:id="@+id/tvEducationTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
         android:includeFontPadding="false"
         android:text="@string/title_ed"
-        android:textSize="32sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/TextContent.EducationDesc"
         android:id="@+id/tvEducationDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/ed_desc"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tvEducationTitle"
         app:layout_constraintStart_toStartOf="@+id/tvEducationTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvEducationTitle" />
