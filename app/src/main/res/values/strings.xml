@@ -34,4 +34,15 @@
     <string name="notif_desc">Matikan Notifikasi Saat Mendapatkan Hasil dari Analisis AI dan Mengirimkan Laporan</string>
     <string name="log_out">Log Out Akun</string>
     <string name="logout">Keluar</string>
+    <string name="tab_web">Situs</string>
+    <string name="tab_ads">Iklan</string>
+    <string name="add_report">Membuat Laporan</string>
+    <string name="web_desc">Unggah url dari situs judi online, dan dengan bantuan AI, sistem akan mengidentifikasi situs tersebut serta memberikan deskripsi singkat.</string>
+    <string name="url">Url</string>
+    <string name="desc">Deskripsi</string>
+    <string name="web_check">Cek Website</string>
+    <string name="ads_desc">Unggah text dari iklan dan dengan bantuan AI, sistem akan mengidentifikasi iklan tersebut</string>
+    <string name="ads_text">Teks Iklan</string>
+    <string name="ads_here">Masukan Teks Iklan di Sini</string>
+    <string name="ads_check">Cek Iklan</string>
 </resources>

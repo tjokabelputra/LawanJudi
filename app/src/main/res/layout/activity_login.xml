@@ -46,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvLoginTitle" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/geminiEditTextLayout"
+            android:id="@+id/emailEditTextLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/geminiEditText"
+                android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_input"
@@ -73,8 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/password"
-            app:layout_constraintStart_toStartOf="@+id/geminiEditTextLayout"
-            app:layout_constraintTop_toBottomOf="@+id/geminiEditTextLayout" />
+            app:layout_constraintStart_toStartOf="@+id/emailEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordEditTextLayout"
@@ -83,7 +83,7 @@
             android:layout_marginTop="8dp"
             app:endIconMode="password_toggle"
             app:hintEnabled="false"
-            app:layout_constraintEnd_toEndOf="@+id/geminiEditTextLayout"
+            app:layout_constraintEnd_toEndOf="@+id/emailEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/tvLoginPassword"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginPassword">
 

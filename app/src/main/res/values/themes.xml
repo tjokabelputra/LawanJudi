@@ -69,7 +69,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextContent.EducationDesc">
+    <style name="TextContent.HomeDesc">
         <item name="android:layout_marginTop">16dp</item>
     </style>
 

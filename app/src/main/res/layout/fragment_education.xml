@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/TextContent.EducationDesc"
+        style="@style/TextContent.HomeDesc"
         android:id="@+id/tvEducationDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

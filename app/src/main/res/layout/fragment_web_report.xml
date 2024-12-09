@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.web.WebReportFragment">
+
+
+    <TextView
+        android:id="@+id/tvWebTitle"
+        style="@style/TextContent.HomeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_report"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWebDesc"
+        style="@style/TextContent.HomeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/web_desc"
+        app:layout_constraintEnd_toEndOf="@+id/tvWebTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvWebTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebTitle" />
+
+    <TextView
+        android:id="@+id/tvWebUrl"
+        style="@style/TextContent.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/url"
+        app:layout_constraintStart_toStartOf="@+id/tvWebDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebDesc" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/urlEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/tvWebDesc"
+        app:layout_constraintStart_toStartOf="@+id/tvWebUrl"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebUrl">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/urlEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_web"
+            android:drawablePadding="16dp"
+            android:hint="@string/url"
+            android:inputType="text"
+            android:textColor="?attr/colorOnPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="216dp"
+        android:layout_marginTop="24dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/urlEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/urlEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/urlEditTextLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descEditText"
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:background="@drawable/bg_input"
+            android:drawablePadding="16dp"
+            android:hint="@string/desc"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:textColor="?attr/colorOnPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/web_check"
+        android:background="@drawable/bg_btn"
+        app:layout_constraintEnd_toEndOf="@+id/descEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/descEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/descEditTextLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

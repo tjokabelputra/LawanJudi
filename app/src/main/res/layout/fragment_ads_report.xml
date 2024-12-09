@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.ads.AdsReportFragment">
+
+    <TextView
+        android:id="@+id/tvAdsTitle"
+        style="@style/TextContent.HomeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_report"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAdsDesc"
+        style="@style/TextContent.HomeDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ads_desc"
+        app:layout_constraintEnd_toEndOf="@+id/tvAdsTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvAdsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdsTitle" />
+
+    <TextView
+        android:id="@+id/tvWebUrl"
+        style="@style/TextContent.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ads_text"
+        app:layout_constraintStart_toStartOf="@+id/tvAdsDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvAdsDesc" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/adsEditTextLayout"
+        android:layout_width="0dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="8dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/tvAdsDesc"
+        app:layout_constraintStart_toStartOf="@+id/tvWebUrl"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebUrl">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/adsEditText"
+            android:layout_width="match_parent"
+            android:layout_height="308dp"
+            android:background="@drawable/bg_input"
+            android:drawablePadding="16dp"
+            android:hint="@string/ads_here"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:textColor="?attr/colorOnPrimary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_btn"
+        android:text="@string/ads_check"
+        app:layout_constraintEnd_toEndOf="@+id/adsEditTextLayout"
+        app:layout_constraintStart_toStartOf="@+id/adsEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@+id/adsEditTextLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
