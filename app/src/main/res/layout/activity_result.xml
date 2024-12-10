@@ -1,46 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.result.ResultActivity">
 
-    <TextView
-        android:id="@+id/tvText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvRes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/tvText"
-        app:layout_constraintTop_toBottomOf="@+id/tvText" />
+        <TextView
+            android:id="@+id/tvResTitle"
+            style="@style/TextContent.ResTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/res_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvProb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/tvRes"
-        app:layout_constraintTop_toBottomOf="@+id/tvRes" />
+        <TextView
+            android:id="@+id/tvResDesc"
+            style="@style/TextContent.ResDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/res_desc"
+            app:layout_constraintEnd_toEndOf="@+id/tvResTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvResTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvResTitle" />
 
-    <TextView
-        android:id="@+id/tvDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/tvProb"
-        app:layout_constraintTop_toBottomOf="@+id/tvProb" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            style="@style/TextContent.ResLabel"
+            android:id="@+id/tvType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            app:layout_constraintEnd_toEndOf="@+id/tvResDesc"
+            app:layout_constraintStart_toStartOf="@+id/tvResDesc"
+            app:layout_constraintTop_toBottomOf="@+id/tvResDesc" />
+
+        <TextView
+            android:id="@+id/tvContent"
+            style="@style/TextContent.ResCont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/type_content"
+            app:layout_constraintEnd_toEndOf="@+id/tvType"
+            app:layout_constraintStart_toStartOf="@+id/tvType"
+            app:layout_constraintTop_toBottomOf="@+id/tvType" />
+
+        <TextView
+            android:id="@+id/tvDesc"
+            style="@style/TextContent.ResLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/desc"
+            app:layout_constraintEnd_toEndOf="@+id/tvContent"
+            app:layout_constraintStart_toStartOf="@+id/tvContent"
+            app:layout_constraintTop_toBottomOf="@+id/tvContent" />
+
+        <TextView
+            android:id="@+id/tvDescContent"
+            style="@style/TextContent.ResCont"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/desc_content"
+            app:layout_constraintEnd_toEndOf="@+id/tvDesc"
+            app:layout_constraintStart_toStartOf="@+id/tvDesc"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesc" />
+
+        <CheckBox
+            android:id="@+id/cbReport"
+            style="@style/TextContent.ResCB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/keep_report"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescContent" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="Button"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cbReport" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

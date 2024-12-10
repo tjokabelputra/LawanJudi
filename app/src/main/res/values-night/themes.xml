@@ -1,7 +1,7 @@
 <resources>
     <style name="Base.Theme.LawanJudi" parent="Theme.Material3.DayNight">
         <item name="colorPrimary">@color/purple800</item>
-        <item name="colorPrimaryVariant">@color/darkGrey</item>
+        <item name="colorPrimaryInverse">@color/darkGrey</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <item name="colorPrimaryContainer">@color/purple300</item>
@@ -66,5 +66,37 @@
 
     <style name="TextContent.EducationDesc">
         <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="TextContent.ResTitle">
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.ResDesc">
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="TextContent.ResLabel">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextContent.ResCont">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextContent.ResCB">
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

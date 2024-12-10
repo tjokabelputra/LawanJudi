@@ -47,6 +47,7 @@ class WebReportFragment : Fragment() {
                     val intent = Intent(requireContext(), ResultActivity::class.java)
                     intent.putExtra(WEB_RES, response.data)
                     intent.putExtra(DESC, binding?.descEditText?.text.toString())
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                     binding?.urlEditText?.text = null
                     binding?.descEditText?.text = null
                     startActivity(intent)

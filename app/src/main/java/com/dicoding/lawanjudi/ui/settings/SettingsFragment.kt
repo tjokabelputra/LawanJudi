@@ -43,8 +43,16 @@ class SettingsFragment : Fragment() {
             })
         }
 
+        mainViewModel.getNotificationSettings().observe(viewLifecycleOwner) { isHideNotification: Boolean ->
+            binding?.swNotification?.isChecked = isHideNotification
+        }
+
         binding?.swDarkMode?.setOnCheckedChangeListener { _, isChecked ->
             mainViewModel.saveThemeSetting(isChecked)
+        }
+
+        binding?.swNotification?.setOnCheckedChangeListener { _, isChecked ->
+            mainViewModel.saveNotificationSetting(isChecked)
         }
 
         binding?.btnLogOut?.setOnClickListener {

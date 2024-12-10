@@ -47,6 +47,7 @@ class AdsReportFragment : Fragment() {
                     binding?.pgAds?.visibility = View.GONE
                     val intent = Intent(requireContext(), ResultActivity::class.java)
                     intent.putExtra(ADS_RES, response.data)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                     binding?.adsEditText?.text = null
                     startActivity(intent)
                 }

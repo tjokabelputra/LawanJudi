@@ -45,4 +45,17 @@
     <string name="ads_text">Teks Iklan</string>
     <string name="ads_here">Masukan Teks Iklan di Sini</string>
     <string name="ads_check">Cek Iklan</string>
+    <string name="check_success">Selamat! Hasil Analisis Anda Benar</string>
+    <string name="check_failed">Maaf! Hasil Analisis Anda Salah</string>
+    <string name="res_title">Res Title</string>
+    <string name="check_success_desc">%s yang Anda kirimkan terdeteksi sebagai %s judi online dengan tingkat kemiripan %s. Berikut adalah rincian yang Anda kirimkan:</string>
+    <string name="check_failed_desc">%s yang Anda kirimkan tidak terdeteksi sebagai %s judi online dengan tingkat kemiripan %s. Berikut adalah rincian yang Anda kirimkan:</string>
+    <string name="res_desc">Res Desc</string>
+    <string name="type">tipe</string>
+    <string name="type_content">type content</string>
+    <string name="desc_content">desc content</string>
+    <string name="keep_report">Tetap Lapor</string>
+    <string name="check_success_notification">Laporan Anda terindikasi afiliasi judi online. Laporkan segera.</string>
+    <string name="check_failed_notification">Laporan Anda tidak terindikasi afiliasi judi online. Laporkan jika perlu.</string>
+    <string name="subtext">Hasil Analisis</string>
 </resources>
