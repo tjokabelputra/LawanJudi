@@ -1,6 +1,9 @@
 package com.dicoding.lawanjudi.ui.home
 
+import android.graphics.Rect
 import android.os.Bundle
+import android.view.View
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,6 +21,25 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+        binding.navView.viewTreeObserver.addOnGlobalLayoutListener {
+            val r = Rect()
+            binding.navView.getWindowVisibleDisplayFrame(r)
+            val screenHeight = binding.navView.rootView.height
+            val keypadHeight = screenHeight - r.bottom
+
+            if(keypadHeight > screenHeight * 0.15){
+                binding.navView.animate()
+                    .translationY(binding.navView.height.toFloat())
+                    .setDuration(100)
+                    .start()
+            } else {
+                binding.navView.animate()
+                    .translationY(0f)
+                    .setDuration(200)
+                    .start()
+            }
+        }
 
         val navView: BottomNavigationView = binding.navView
 

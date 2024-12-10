@@ -7,9 +7,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
-    private val GEMINI_URL = BuildConfig.GEMINI_URL
+    private const val GEMINI_URL = BuildConfig.GEMINI_URL
+    private val AI_URL = BuildConfig.AI_URL
 
-    fun getAiService(): ApiService {
+    fun getGeminiService(): ApiService {
         val loggingInterceptor = HttpLoggingInterceptor()
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
@@ -17,6 +18,21 @@ object ApiConfig {
         val retrofit = Retrofit.Builder()
             .baseUrl(GEMINI_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .build()
+        return retrofit.create(ApiService::class.java)
+    }
+
+    fun getAiService(): ApiService {
+        val loggingInterceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+        val client = OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
+            .build()
+        val retrofit = Retrofit.Builder()
+            .baseUrl(AI_URL)
+            .addConverterFactory((GsonConverterFactory.create()))
             .client(client)
             .build()
         return retrofit.create(ApiService::class.java)

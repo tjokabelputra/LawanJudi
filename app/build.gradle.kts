@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -19,6 +20,7 @@ android {
 
         buildConfigField("String", "GEMINI_KEY", "\"AIzaSyDAIr5ZYFIGg6P8GE7qmtGX-PDNn8AKbUc\"")
         buildConfigField("String", "GEMINI_URL", "\"https://generativelanguage.googleapis.com/\"")
+        buildConfigField("String", "AI_URL", "\"http://34.87.157.32:8000\"")
     }
 
     buildTypes {
