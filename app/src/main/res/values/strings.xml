@@ -80,4 +80,7 @@
     <string name="report_success">Terima Kasih atas Partisipasinya!</string>
     <string name="report_success_notification">Semoga laporan yang anda berikan dapat membantu membasmi situs judi online</string>
     <string name="subtext_report">Hasil Pelaporan</string>
+    <string name="history_desc">Bagian ini berfungsi untuk menampilkan riwayat laporan yang telah Anda kirimkan terkait situs judi online.</string>
+    <string name="history_title">Histori Pelaporan</string>
+    <string name="report_detail">Detail Pelaporan</string>
 </resources>

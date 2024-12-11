@@ -3,6 +3,7 @@ package com.dicoding.lawanjudi.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.lawanjudi.database.Result
+import com.dicoding.lawanjudi.database.local.entity.ReportEntity
 import com.dicoding.lawanjudi.model.LoginResult
 import com.dicoding.lawanjudi.model.Report
 import com.dicoding.lawanjudi.model.User
@@ -18,6 +19,7 @@ class FirebaseViewModel : ViewModel() {
     val addUserResult = MutableLiveData<Result<String>>()
     val loginResult = MutableLiveData<Result<LoginResult>>()
     val reportResult = MutableLiveData<Result<String>>()
+    val reportListResult = MutableLiveData<Result<List<ReportEntity>>>()
 
     private val auth = FirebaseAuth.getInstance()
     private val db: FirebaseDatabase = Firebase.database
@@ -100,5 +102,41 @@ class FirebaseViewModel : ViewModel() {
                 reportResult.postValue(Result.Success("Laporan Anda Berhasil Dibuat"))
             }
         }
+    }
+
+    fun getReports(name: String, email: String) {
+        reportListResult.postValue(Result.Loading)
+        val reportRef = db.reference.child("reports")
+
+        reportRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val reportList = mutableListOf<ReportEntity>()
+
+                for (childSnapshot in snapshot.children) {
+                    val report = childSnapshot.getValue(Report::class.java)
+                    report?.let {
+                        if (it.name == name && it.email == email) {
+                            val reportEntity = ReportEntity(
+                                id = it.id.toString(),
+                                content = it.content.toString(),
+                                description = it.description.toString(),
+                                aiConfirmed = it.aiConfirmed
+                            )
+                            reportList.add(reportEntity)
+                        }
+                    }
+                }
+
+                if (reportList.isNotEmpty()) {
+                    reportListResult.postValue(Result.Success(reportList))
+                } else {
+                    reportListResult.postValue(Result.Error("Reports Not Found"))
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                reportListResult.postValue(Result.Error(error.message))
+            }
+        })
     }
 }

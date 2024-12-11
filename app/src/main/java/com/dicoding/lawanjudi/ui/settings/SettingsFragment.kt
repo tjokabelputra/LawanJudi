@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.database.SettingPreference
@@ -16,8 +17,12 @@ import com.dicoding.lawanjudi.database.settingsDataStore
 import com.dicoding.lawanjudi.database.userDataStore
 import com.dicoding.lawanjudi.databinding.FragmentSettingsBinding
 import com.dicoding.lawanjudi.ui.UserViewModel
+import com.dicoding.lawanjudi.ui.factory.ChatModelFactory
+import com.dicoding.lawanjudi.ui.factory.ReportsModelFactory
 import com.dicoding.lawanjudi.ui.factory.SettingsModelFactory
 import com.dicoding.lawanjudi.ui.factory.UserModelFactory
+import com.dicoding.lawanjudi.ui.gemini.GeminiViewModel
+import com.dicoding.lawanjudi.ui.history.HistoryViewModel
 import com.dicoding.lawanjudi.ui.landing.MainActivity
 
 class SettingsFragment : Fragment() {
@@ -42,6 +47,16 @@ class SettingsFragment : Fragment() {
         val userPref = UserPreference.getInstance(requireContext().userDataStore)
         val userViewModel = ViewModelProvider(this, UserModelFactory(userPref))[UserViewModel::class.java]
 
+        val chatFactory: ChatModelFactory = ChatModelFactory.getInstance(requireContext())
+        val chatViewModel: GeminiViewModel by viewModels {
+            chatFactory
+        }
+
+        val reportsFactory: ReportsModelFactory = ReportsModelFactory.getInstance(requireContext())
+        val reportsViewModel: HistoryViewModel by viewModels {
+            reportsFactory
+        }
+
         mainViewModel.getThemeSettings().observe(viewLifecycleOwner) { isDarkModeActive: Boolean ->
             AppCompatDelegate.setDefaultNightMode(if (isDarkModeActive) {
                 binding?.swDarkMode?.isChecked = true
@@ -65,6 +80,8 @@ class SettingsFragment : Fragment() {
         }
 
         binding?.btnLogOut?.setOnClickListener {
+            chatViewModel.deleteChat()
+            reportsViewModel.deleteReports()
             AlertDialog.Builder(this@SettingsFragment.requireContext())
                 .setTitle(R.string.logout)
                 .setMessage(R.string.logout_confirmation)
