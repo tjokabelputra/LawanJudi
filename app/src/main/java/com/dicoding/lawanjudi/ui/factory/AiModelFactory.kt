@@ -1,4 +1,4 @@
-package com.dicoding.lawanjudi.ui
+package com.dicoding.lawanjudi.ui.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

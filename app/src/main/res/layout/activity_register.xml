@@ -84,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRegisterEmail"
             app:startIconDrawable="@drawable/ic_email">
 
-            <com.dicoding.lawanjudi.ui.EmailEditText
+            <com.dicoding.lawanjudi.ui.customview.EmailEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
@@ -115,7 +115,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRegisterPassword"
             app:startIconDrawable="@drawable/ic_lock">
 
-            <com.dicoding.lawanjudi.ui.PasswordEditText
+            <com.dicoding.lawanjudi.ui.customview.PasswordEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
@@ -138,5 +138,16 @@
             app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout"
             app:backgroundTint="@null"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/pgRegister"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="?attr/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

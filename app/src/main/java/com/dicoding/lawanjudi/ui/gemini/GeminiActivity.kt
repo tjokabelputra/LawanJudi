@@ -8,10 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.lawanjudi.database.remote.response.ContentRequest
 import com.dicoding.lawanjudi.database.remote.response.ContentsItem
-import com.dicoding.lawanjudi.database.remote.response.Message
 import com.dicoding.lawanjudi.database.remote.response.Parts
 import com.dicoding.lawanjudi.databinding.ActivityGeminiBinding
-import com.dicoding.lawanjudi.ui.ChatModelFactory
+import com.dicoding.lawanjudi.ui.factory.ChatModelFactory
 import com.dicoding.lawanjudi.database.Result
 import com.dicoding.lawanjudi.database.local.entity.ChatEntity
 import com.dicoding.lawanjudi.ui.adapter.ChatAdapter

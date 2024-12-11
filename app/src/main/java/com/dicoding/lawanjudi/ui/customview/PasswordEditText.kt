@@ -1,4 +1,4 @@
-package com.dicoding.lawanjudi.ui
+package com.dicoding.lawanjudi.ui.customview
 
 import android.content.Context
 import android.util.AttributeSet

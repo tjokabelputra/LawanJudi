@@ -60,4 +60,18 @@
     <string name="subtext">Hasil Analisis</string>
     <string name="password_error">Kata Sandi Tidak Boleh Kurang dari 8 Karakter</string>
     <string name="email_error">Format Email Salah</string>
+    <string name="empty_name">Data Nama Kosong</string>
+    <string name="empty_name_desc">Tolong Masukan Nama Lengkap Anda</string>
+    <string name="next">Continue</string>
+    <string name="empty_email">Data Email Kosong</string>
+    <string name="empty_email_desc">Tolong Masukan Email Anda</string>
+    <string name="empty_password">Data Password Kosong</string>
+    <string name="empty_password_desc">Tolong Masukan Password Anda</string>
+    <string name="registration_success">Registrasi Berhasil</string>
+    <string name="registration_failed">Registrasi Gagal</string>
+    <string name="login_success">Login Berhasil</string>
+    <string name="client_id">903722169920-cf47gcplvi38kdavvs4k206u3ogg2eu5.apps.googleusercontent.com</string>
+    <string name="logout_confirmation">Apakah Kamu Yaking Ingin Keluar dari Akun Ini</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
 </resources>

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.dicoding.lawanjudi.databinding.FragmentWebReportBinding
-import com.dicoding.lawanjudi.ui.AiModelFactory
+import com.dicoding.lawanjudi.ui.factory.AiModelFactory
 import com.dicoding.lawanjudi.ui.add.AddViewModel
 import com.dicoding.lawanjudi.database.Result
 import com.dicoding.lawanjudi.ui.result.ResultActivity
@@ -47,7 +47,7 @@ class WebReportFragment : Fragment() {
                     val intent = Intent(requireContext(), ResultActivity::class.java)
                     intent.putExtra(WEB_RES, response.data)
                     intent.putExtra(DESC, binding?.descEditText?.text.toString())
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     binding?.urlEditText?.text = null
                     binding?.descEditText?.text = null
                     startActivity(intent)

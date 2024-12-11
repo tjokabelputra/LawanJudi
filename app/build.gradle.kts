@@ -56,6 +56,8 @@ dependencies {
     implementation(libs.material.v150)
     implementation(libs.play.services.base)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.database.ktx)
+    implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

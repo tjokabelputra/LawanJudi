@@ -1,8 +1,8 @@
-package com.dicoding.lawanjudi.ui
+package com.dicoding.lawanjudi.ui.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.lawanjudi.ui.settings.SettingPreference
+import com.dicoding.lawanjudi.database.SettingPreference
 import com.dicoding.lawanjudi.ui.settings.SettingViewModel
 
 class SettingsModelFactory(private val pref: SettingPreference) : ViewModelProvider.NewInstanceFactory() {

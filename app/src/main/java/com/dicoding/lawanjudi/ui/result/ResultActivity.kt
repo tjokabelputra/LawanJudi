@@ -17,11 +17,11 @@ import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.database.remote.response.AdsPredictReponse
 import com.dicoding.lawanjudi.database.remote.response.WebPredictResponse
 import com.dicoding.lawanjudi.databinding.ActivityResultBinding
-import com.dicoding.lawanjudi.ui.SettingsModelFactory
+import com.dicoding.lawanjudi.ui.factory.SettingsModelFactory
 import com.dicoding.lawanjudi.ui.home.HomeActivity
-import com.dicoding.lawanjudi.ui.settings.SettingPreference
+import com.dicoding.lawanjudi.database.SettingPreference
+import com.dicoding.lawanjudi.database.settingsDataStore
 import com.dicoding.lawanjudi.ui.settings.SettingViewModel
-import com.dicoding.lawanjudi.ui.settings.dataStore
 import com.dicoding.lawanjudi.util.StringFormatter.percentFormatter
 
 class ResultActivity : AppCompatActivity() {
@@ -100,7 +100,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun sendNotification(isSuccess: Boolean){
-        val pref = SettingPreference.getInstance(dataStore)
+        val pref = SettingPreference.getInstance(settingsDataStore)
         val settingViewModel = ViewModelProvider(this, SettingsModelFactory(pref))[SettingViewModel::class.java]
 
         settingViewModel.getNotificationSettings().observe(this) { isHideNotification: Boolean ->
