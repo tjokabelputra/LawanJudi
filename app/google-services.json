@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "903722169920",
+    "project_id": "lawanjudi",
+    "storage_bucket": "lawanjudi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903722169920:android:4cc6bbf43ded3df65411a5",
+        "android_client_info": {
+          "package_name": "com.dicoding.lawanjudi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuQexFjkCkQ30xvIxqP20-swq000RA7vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

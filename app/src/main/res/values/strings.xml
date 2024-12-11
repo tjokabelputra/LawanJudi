@@ -58,4 +58,6 @@
     <string name="check_success_notification">Laporan Anda terindikasi afiliasi judi online. Laporkan segera.</string>
     <string name="check_failed_notification">Laporan Anda tidak terindikasi afiliasi judi online. Laporkan jika perlu.</string>
     <string name="subtext">Hasil Analisis</string>
+    <string name="password_error">Kata Sandi Tidak Boleh Kurang dari 8 Karakter</string>
+    <string name="email_error">Format Email Salah</string>
 </resources>

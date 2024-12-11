@@ -81,15 +81,14 @@
             app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="@+id/nameEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/tvRegisterEmail"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEmail">
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterEmail"
+            app:startIconDrawable="@drawable/ic_email">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.dicoding.lawanjudi.ui.EmailEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:background="@drawable/bg_input"
-                android:drawableStart="@drawable/ic_email"
-                android:drawablePadding="16dp"
                 android:hint="@string/email"
                 android:inputType="text"
                 android:textColor="?attr/colorOnPrimary" />
@@ -113,15 +112,14 @@
             app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="@+id/emailEditTextLayout"
             app:layout_constraintStart_toStartOf="@+id/tvRegisterPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegisterPassword">
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterPassword"
+            app:startIconDrawable="@drawable/ic_lock">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.dicoding.lawanjudi.ui.PasswordEditText
                 android:id="@+id/passwordEditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:background="@drawable/bg_input"
-                android:drawableStart="@drawable/ic_lock"
-                android:drawablePadding="16dp"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textColor="?attr/colorOnPrimary" />
