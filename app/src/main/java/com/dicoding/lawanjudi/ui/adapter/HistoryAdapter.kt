@@ -28,7 +28,7 @@ class HistoryAdapter: ListAdapter<ReportEntity, HistoryAdapter.MyViewHolder>(DIF
 
         fun bind(report: ReportEntity){
             binding.imgAiStatus.setImageResource(if(report.aiConfirmed == true) R.drawable.ic_check else R.drawable.ic_cross)
-            binding.tvLaporanId.text = "Laporan ${report.id}"
+            binding.tvLaporanId.text = itemView.context.getString(R.string.report_id_title, report.id)
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, ReportDetailActivity::class.java)

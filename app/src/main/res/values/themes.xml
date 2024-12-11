@@ -1,15 +1,16 @@
 <resources>
     <style name="Base.Theme.LawanJudi" parent="Theme.Material3.DayNight">
-        <item name="colorPrimary">@color/purple300</item>
-        <item name="colorPrimaryInverse">@color/white</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/purple300</item> // Main Color
+        <item name="colorPrimaryInverse">@color/white</item> //Color Of The Content Box
+        <item name="colorOnPrimary">@color/black</item> // Text Color
 
-        <item name="colorPrimaryContainer">@color/lightpurp</item>
-        <item name="colorOnContainer">@color/purple700</item>
+        <item name="colorPrimaryContainer">@color/lightpurp</item> //Bottom Menu Color
+        <item name="colorOnContainer">@color/purple700</item> //Selected Menu Color
 
-        <item name="colorSecondary">@color/lightgrey</item>
+        <item name="colorSecondary">@color/lightgrey</item> // User Chat Color
+        <item name="colorTertiary">@color/lightpurp</item> // Bot Chat Color
 
-        <item name="colorTertiary">@color/lightpurp</item>
+        <item name="colorSecondaryVariant">@color/white</item>
     </style>
 
     <style name="Theme.LawanJudi" parent="Base.Theme.LawanJudi" />

@@ -64,6 +64,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_btn"
         android:text="@string/ads_check"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/adsEditTextLayout"
         app:layout_constraintStart_toStartOf="@+id/adsEditTextLayout"
         app:layout_constraintTop_toBottomOf="@+id/adsEditTextLayout" />

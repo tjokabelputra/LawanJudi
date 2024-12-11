@@ -10,7 +10,6 @@ import com.dicoding.lawanjudi.database.local.entity.ChatEntity
 import com.dicoding.lawanjudi.database.remote.response.ContentRequest
 import com.dicoding.lawanjudi.database.remote.response.ContentResponse
 import com.dicoding.lawanjudi.database.remote.response.ErrorResponse
-import com.dicoding.lawanjudi.database.remote.response.Message
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.HttpException

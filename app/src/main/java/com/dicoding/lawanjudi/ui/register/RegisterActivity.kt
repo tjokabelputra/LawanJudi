@@ -51,7 +51,7 @@ class RegisterActivity : AppCompatActivity() {
                         .setMessage(result.error)
                         .setNegativeButton(R.string.next) {dialog, _ -> dialog.dismiss()}
                         .show()
-                    Log.e("RegisterActivity", "Error: ${result}")
+                    Log.e("RegisterActivity", "Error: $result")
                 }
             }
         }

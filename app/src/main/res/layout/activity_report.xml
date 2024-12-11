@@ -111,6 +111,7 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/bg_btn"
             android:text="@string/report_again"
+            android:textSize="18sp"
             android:textColor="?attr/colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

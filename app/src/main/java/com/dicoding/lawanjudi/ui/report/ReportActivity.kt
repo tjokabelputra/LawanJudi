@@ -2,15 +2,11 @@ package com.dicoding.lawanjudi.ui.report
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.databinding.ActivityReportBinding
 import com.dicoding.lawanjudi.model.Report
 import com.dicoding.lawanjudi.ui.home.HomeActivity
-import java.util.UUID
 
 class ReportActivity : AppCompatActivity() {
     private var _binding: ActivityReportBinding? = null
@@ -24,12 +20,12 @@ class ReportActivity : AppCompatActivity() {
 
         val report = intent.getParcelableExtra<Report>(REP)
 
-        binding?.tvReportName?.text = "Nama Pelapor: ${report?.name}"
-        binding?.tvReportEmail?.text = "Email Pelapor: ${report?.email}"
-        binding?.tvId?.text = "ID Laporan: ${report?.id}"
-        binding?.tvContent?.text = "Konten: ${report?.content}"
-        binding?.tvDesc?.text = "Deskripsi: ${report?.description ?: "Tidak ada deskripsi"}"
-        binding?.tvAiIndicated?.text = "Terindikasi AI: ${if (report?.aiConfirmed == true) "Ya" else "Tidak"}"
+        binding?.tvReportName?.text = getString(R.string.reporter_name, report?.name)
+        binding?.tvReportEmail?.text = getString(R.string.reporter_email, report?.email)
+        binding?.tvId?.text = getString(R.string.report_id, report?.id)
+        binding?.tvContent?.text = getString(R.string.report_content, report?.content)
+        binding?.tvDesc?.text = getString(R.string.report_cont_desc, report?.description ?: "Tidak Ada Deskripsi")
+        binding?.tvAiIndicated?.text = getString(R.string.ai_indicated, if(report?.aiConfirmed == true) "Ya" else "Tidak")
 
         binding?.btnHome?.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)

@@ -1,11 +1,8 @@
 package com.dicoding.lawanjudi.ui.detail
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.databinding.ActivityReportDetailBinding
 import com.dicoding.lawanjudi.ui.factory.ReportsModelFactory
@@ -30,10 +27,10 @@ class ReportDetailActivity : AppCompatActivity() {
         }
 
         viewModels.getReportId(id.toString()).observe(this) { report ->
-            binding?.tvReportId?.text = "ID Laporan: ${report.id}"
-            binding?.tvContent?.text = "Isi Laporan: ${report.content}"
-            binding?.tvReportDesc?.text = "Deskripsi Laporan: ${report.description}"
-            binding?.tvAiConfirmed?.text = "AI Konfirmasi: ${if(report.aiConfirmed == true) "Ya" else "Tidak"}"
+            binding?.tvReportId?.text = getString(R.string.report_id, report.id)
+            binding?.tvContent?.text = getString(R.string.report_content, report.content)
+            binding?.tvReportDesc?.text = getString(R.string.report_cont_desc, report.description)
+            binding?.tvAiConfirmed?.text = getString(R.string.ai_indicated, if(report.aiConfirmed == true) "Ya" else "Tidak")
         }
     }
 

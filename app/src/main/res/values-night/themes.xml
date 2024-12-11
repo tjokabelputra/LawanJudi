@@ -1,5 +1,5 @@
 <resources>
-    <style name="Base.Theme.LawanJudi" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.LawanJudi.Dark" parent="Theme.Material3.DayNight">
         <item name="colorPrimary">@color/purple800</item>
         <item name="colorPrimaryInverse">@color/darkGrey</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -10,9 +10,11 @@
         <item name="colorSecondary">@color/grey700</item>
 
         <item name="colorTertiary">@android:color/transparent</item>
+
+        <item name="colorSecondaryVariant">@color/purple800</item>
     </style>
 
-    <style name="Theme.LawanJudi" parent="Base.Theme.LawanJudi" />
+    <style name="Theme.LawanJudi" parent="Base.Theme.LawanJudi.Dark" />
 
     <style name="TextContent">
         <item name="android:textColor">?attr/colorOnPrimary</item>

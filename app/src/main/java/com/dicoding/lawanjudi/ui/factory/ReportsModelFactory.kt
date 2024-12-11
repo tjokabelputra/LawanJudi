@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.lawanjudi.database.ReportRepository
 import com.dicoding.lawanjudi.di.Injection
-import com.dicoding.lawanjudi.ui.gemini.GeminiViewModel
 import com.dicoding.lawanjudi.ui.history.HistoryViewModel
 
 

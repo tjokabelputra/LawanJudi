@@ -1,6 +1,7 @@
 package com.dicoding.lawanjudi.ui.result
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -39,9 +40,9 @@ class ResultActivity : AppCompatActivity() {
     private var _binding: ActivityResultBinding? = null
     private val binding get() = _binding
 
-    val firebaseViewModel : FirebaseViewModel by viewModels()
+    private val firebaseViewModel : FirebaseViewModel by viewModels()
 
-    lateinit var report: Report
+    private lateinit var report: Report
     lateinit var user: User
 
     private val requestPermissionLauncher =
@@ -70,7 +71,7 @@ class ResultActivity : AppCompatActivity() {
         val webRes: WebPredictResponse? = intent.getParcelableExtra(WEB_RES)
         val adRes: AdsPredictReponse? = intent.getParcelableExtra(ADS_RES)
 
-        val type = if(webRes != null)  "Situs" else "Iklan"
+        val type = if(webRes != null)  getString(R.string.tab_web) else getString(R.string.tab_ads)
         val percent = percentFormatter(webRes?.probability ?: adRes?.probability ?: 0.0)
 
         if(webRes?.isJudiOnline == true || adRes?.isJudiOnline == true){
@@ -82,7 +83,7 @@ class ResultActivity : AppCompatActivity() {
                 percent
             )
             binding?.cbReport?.visibility = View.GONE
-            binding?.btnNext?.text = "Kirim"
+            binding?.btnNext?.text = getString(R.string.send)
             sendNotification(true)
         }
         else{
@@ -93,11 +94,11 @@ class ResultActivity : AppCompatActivity() {
                 type,
                 percent
             )
-            binding?.btnNext?.text = "Kembali Lapor"
+            binding?.btnNext?.text = getString(R.string.rep_again)
             sendNotification(false)
         }
 
-        binding?.tvType?.text = "$type: "
+        binding?.tvType?.text = getString(R.string.res_type, type)
         binding?.tvContent?.text = webRes?.url ?: adRes?.text
 
         if(webRes != null){
@@ -109,7 +110,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         binding?.cbReport?.setOnCheckedChangeListener { _, isChecked ->
-            binding?.btnNext?.text = if (isChecked) "Kirim" else "Kembali Lapor"
+            binding?.btnNext?.text = if (isChecked) getString(R.string.send) else getString(R.string.rep_again)
         }
 
         firebaseViewModel.reportResult.observe(this) { result ->
@@ -132,7 +133,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         binding?.btnNext?.setOnClickListener {
-            if (binding?.btnNext?.text == "Kirim") {
+            if (binding?.btnNext?.text == getString(R.string.send)) {
                 report = Report(
                     id = UUID.randomUUID().toString(),
                     name = user.name,

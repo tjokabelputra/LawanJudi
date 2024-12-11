@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConfig {
     private const val GEMINI_URL = BuildConfig.GEMINI_URL
-    private val AI_URL = BuildConfig.AI_URL
+    private const val AI_URL = BuildConfig.AI_URL
 
     fun getGeminiService(): ApiService {
         val loggingInterceptor = HttpLoggingInterceptor()

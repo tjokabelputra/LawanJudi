@@ -12,14 +12,13 @@ import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.GetCredentialResponse
 import androidx.credentials.exceptions.GetCredentialException
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.lawanjudi.R
-import com.dicoding.lawanjudi.databinding.ActivityLoginBinding
-import com.dicoding.lawanjudi.ui.FirebaseViewModel
 import com.dicoding.lawanjudi.database.Result
 import com.dicoding.lawanjudi.database.UserPreference
 import com.dicoding.lawanjudi.database.userDataStore
+import com.dicoding.lawanjudi.databinding.ActivityLoginBinding
+import com.dicoding.lawanjudi.ui.FirebaseViewModel
 import com.dicoding.lawanjudi.ui.UserViewModel
 import com.dicoding.lawanjudi.ui.factory.UserModelFactory
 import com.dicoding.lawanjudi.ui.home.HomeActivity
@@ -82,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                         .setMessage(result.error)
                         .setNegativeButton(R.string.next) {dialog, _ -> dialog.dismiss()}
                         .show()
-                    Log.e("Login Activity", "Error: ${result}")
+                    Log.e("Login Activity", "Error: $result")
                 }
             }
         }

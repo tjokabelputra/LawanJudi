@@ -1,6 +1,5 @@
 package com.dicoding.lawanjudi.ui.gemini
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -9,17 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.lawanjudi.R
-import com.dicoding.lawanjudi.database.remote.response.ContentRequest
-import com.dicoding.lawanjudi.database.remote.response.ContentsItem
-import com.dicoding.lawanjudi.database.remote.response.Parts
-import com.dicoding.lawanjudi.databinding.ActivityGeminiBinding
-import com.dicoding.lawanjudi.ui.factory.ChatModelFactory
 import com.dicoding.lawanjudi.database.Result
 import com.dicoding.lawanjudi.database.UserPreference
 import com.dicoding.lawanjudi.database.local.entity.ChatEntity
+import com.dicoding.lawanjudi.database.remote.response.ContentRequest
+import com.dicoding.lawanjudi.database.remote.response.ContentsItem
+import com.dicoding.lawanjudi.database.remote.response.Parts
 import com.dicoding.lawanjudi.database.userDataStore
+import com.dicoding.lawanjudi.databinding.ActivityGeminiBinding
 import com.dicoding.lawanjudi.ui.adapter.ChatAdapter
-import com.dicoding.lawanjudi.ui.home.HomeActivity
+import com.dicoding.lawanjudi.ui.factory.ChatModelFactory
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 

@@ -1,23 +1,47 @@
 <resources>
     <string name="app_name">LawanJudi</string>
+
+    //Main Activityy
     <string name="landing_title">Aplikasi Pelaporan Terpercaya untuk Situs Judi Online</string>
     <string name="landing_funfact">\"Kerugian 600 Triliun Akibat Judi Online: Hancurkan Masa Depan Bangsa!\" \n\n
         Mari hentikan dampak destruktif judi online yang telah merusak ekonomi dan merampas dana yang seharusnya bisa digunakan untuk pendidikan, infrastruktur, kesehatan, dan ketahanan pangan.
         Sebagian besar pelakunya berasal dari kalangan menengah ke bawah, terjebak dalam lingkaran kecanduan yang merusak keluarga dan masa depan.\n\n
         Laporkan situs judi online sekarang melalui aplikasi ini dan bantu kami melindungi generasi penerus dari dampak buruk judi online!</string>
     <string name="login">Masuk</string>
-    <string name="register">Registrasi</string>
+
+    //Register Activity
     <string name="register_title">Yuk, isi datamu dibawah ini!</string>
+    <string name="register">Registrasi</string>
+    <string name="empty_name">Data Nama Kosong</string>
+    <string name="empty_name_desc">Tolong Masukan Nama Lengkap Anda</string>
+    <string name="registration_success">Registrasi Berhasil</string>
+    <string name="registration_failed">Registrasi Gagal</string>
+
+    //Register and Login
     <string name="name">Nama</string>
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
+    <string name="empty_email">Data Email Kosong</string>
+    <string name="empty_email_desc">Tolong Masukan Email Anda</string>
+    <string name="email_error">Format Email Salah</string>
+    <string name="empty_password">Data Password Kosong</string>
+    <string name="empty_password_desc">Tolong Masukan Password Anda</string>
+    <string name="password_error">Kata Sandi Tidak Boleh Kurang dari 8 Karakter</string>
+    <string name="next">Continue</string>
+
+    //Login Activity
     <string name="login_title">Sudah siap untuk melaporkan situs judi online?</string>
     <string name="noacc">Belum memiliki akun?</string>
     <string name="clickhere">Daftar Disini</string>
+    <string name="login_success">Login Berhasil</string>
+
+    //Bottom Navigation
     <string name="education">Edukasi</string>
     <string name="add">Buat Laporan</string>
     <string name="history">Histori</string>
     <string name="settings">Pengaturan</string>
+
+    //Education Fragment
     <string name="title_ed">Pendidikan mengenai Bahaya Judi Online</string>
     <string name="ed_desc">Informasi mengenai dampak negatif judi online dan bagaimana pengaruhnya terhadap kehidupan pribadi, finansial, dan sosial.</string>
     <string name="askgemini">Bertanya dengan Gemini AI</string>
@@ -26,14 +50,19 @@
     <string name="gemini_hint">Kirim Pesan ke Gemini</string>
     <string name="ask_gemini">Tanya Gemini</string>
     <string name="message">Message</string>
+
+    //Settings Fragment
     <string name="dark_mode">Mode Gelap</string>
     <string name="dark_desc">Aktifkan mode gelap untuk tampilan yang nyaman di malam hari.</string>
-    <string name="off">Off</string>
-    <string name="on">On</string>
     <string name="notification_setting">Matikan Notifikasi</string>
     <string name="notif_desc">Matikan Notifikasi Saat Mendapatkan Hasil dari Analisis AI dan Mengirimkan Laporan</string>
     <string name="log_out">Log Out Akun</string>
     <string name="logout">Keluar</string>
+    <string name="logout_confirmation">Apakah Kamu Yaking Ingin Keluar dari Akun Ini</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+    //Add Report Fragment
     <string name="tab_web">Situs</string>
     <string name="tab_ads">Iklan</string>
     <string name="add_report">Membuat Laporan</string>
@@ -45,6 +74,8 @@
     <string name="ads_text">Teks Iklan</string>
     <string name="ads_here">Masukan Teks Iklan di Sini</string>
     <string name="ads_check">Cek Iklan</string>
+
+    //Result Activity
     <string name="check_success">Selamat! Hasil Analisis Anda Benar</string>
     <string name="check_failed">Maaf! Hasil Analisis Anda Salah</string>
     <string name="res_title">Res Title</string>
@@ -52,35 +83,36 @@
     <string name="check_failed_desc">%s yang Anda kirimkan tidak terdeteksi sebagai %s judi online dengan tingkat kemiripan %s. Berikut adalah rincian yang Anda kirimkan:</string>
     <string name="res_desc">Res Desc</string>
     <string name="type">tipe</string>
+    <string name="res_type">%s: </string>
     <string name="type_content">type content</string>
     <string name="desc_content">desc content</string>
     <string name="keep_report">Tetap Lapor</string>
+    <string name="send">Kirim</string>
+    <string name="rep_again">Lapor Ulang</string>
+
+    //Notification
     <string name="check_success_notification">Laporan Anda terindikasi afiliasi judi online. Laporkan segera.</string>
     <string name="check_failed_notification">Laporan Anda tidak terindikasi afiliasi judi online. Laporkan jika perlu.</string>
     <string name="subtext">Hasil Analisis</string>
-    <string name="password_error">Kata Sandi Tidak Boleh Kurang dari 8 Karakter</string>
-    <string name="email_error">Format Email Salah</string>
-    <string name="empty_name">Data Nama Kosong</string>
-    <string name="empty_name_desc">Tolong Masukan Nama Lengkap Anda</string>
-    <string name="next">Continue</string>
-    <string name="empty_email">Data Email Kosong</string>
-    <string name="empty_email_desc">Tolong Masukan Email Anda</string>
-    <string name="empty_password">Data Password Kosong</string>
-    <string name="empty_password_desc">Tolong Masukan Password Anda</string>
-    <string name="registration_success">Registrasi Berhasil</string>
-    <string name="registration_failed">Registrasi Gagal</string>
-    <string name="login_success">Login Berhasil</string>
     <string name="client_id">903722169920-cf47gcplvi38kdavvs4k206u3ogg2eu5.apps.googleusercontent.com</string>
-    <string name="logout_confirmation">Apakah Kamu Yaking Ingin Keluar dari Akun Ini</string>
-    <string name="yes">Ya</string>
-    <string name="no">Tidak</string>
+
+    //Report Activity
     <string name="report_title">Terima Kasih Telah Melapor</string>
     <string name="report_desc">Terima kasih telah membantu menciptakan lingkungan yang lebih aman dan bersih dari praktik judi online. Laporan Anda sangat berarti bagi kami dan akan segera ditindaklanjuti oleh pihak yang berwenang</string>
+    <string name="reporter_name">Nama Pelapor: %s</string>
+    <string name="reporter_email">Email Pelapor: %s</string>
+    <string name="report_id">ID Laporan: %s</string>
+    <string name="report_content">Konten: %s</string>
+    <string name="report_cont_desc">Deskripsi: %s</string>
+    <string name="ai_indicated">Terindikasi AI: %s</string>
     <string name="report_again">Lapor Lagi</string>
     <string name="report_success">Terima Kasih atas Partisipasinya!</string>
     <string name="report_success_notification">Semoga laporan yang anda berikan dapat membantu membasmi situs judi online</string>
     <string name="subtext_report">Hasil Pelaporan</string>
-    <string name="history_desc">Bagian ini berfungsi untuk menampilkan riwayat laporan yang telah Anda kirimkan terkait situs judi online.</string>
+
+    //History Fragment
     <string name="history_title">Histori Pelaporan</string>
+    <string name="history_desc">Bagian ini berfungsi untuk menampilkan riwayat laporan yang telah Anda kirimkan terkait situs judi online.</string>
+    <string name="report_id_title">Laporan %s</string>
     <string name="report_detail">Detail Pelaporan</string>
 </resources>
