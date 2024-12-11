@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.lawanjudi.database.Result
 import com.dicoding.lawanjudi.model.LoginResult
+import com.dicoding.lawanjudi.model.Report
 import com.dicoding.lawanjudi.model.User
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +17,7 @@ import com.google.firebase.database.database
 class FirebaseViewModel : ViewModel() {
     val addUserResult = MutableLiveData<Result<String>>()
     val loginResult = MutableLiveData<Result<LoginResult>>()
-    val userNameResult = MutableLiveData<Result<String>>()
+    val reportResult = MutableLiveData<Result<String>>()
 
     private val auth = FirebaseAuth.getInstance()
     private val db: FirebaseDatabase = Firebase.database
@@ -86,5 +87,18 @@ class FirebaseViewModel : ViewModel() {
                 loginResult.postValue(Result.Error(error.message))
             }
         })
+    }
+
+    fun saveReport(report: Report){
+        reportResult.postValue(Result.Loading)
+        val reportRef = db.reference.child("reports")
+
+        reportRef.child(report.id!!).setValue(report) { error, _ ->
+            if (error != null) {
+                reportResult.postValue(Result.Error(error.message))
+            } else {
+                reportResult.postValue(Result.Success("Laporan Anda Berhasil Dibuat"))
+            }
+        }
     }
 }

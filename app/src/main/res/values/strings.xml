@@ -74,4 +74,10 @@
     <string name="logout_confirmation">Apakah Kamu Yaking Ingin Keluar dari Akun Ini</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
+    <string name="report_title">Terima Kasih Telah Melapor</string>
+    <string name="report_desc">Terima kasih telah membantu menciptakan lingkungan yang lebih aman dan bersih dari praktik judi online. Laporan Anda sangat berarti bagi kami dan akan segera ditindaklanjuti oleh pihak yang berwenang</string>
+    <string name="report_again">Lapor Lagi</string>
+    <string name="report_success">Terima Kasih atas Partisipasinya!</string>
+    <string name="report_success_notification">Semoga laporan yang anda berikan dapat membantu membasmi situs judi online</string>
+    <string name="subtext_report">Hasil Pelaporan</string>
 </resources>

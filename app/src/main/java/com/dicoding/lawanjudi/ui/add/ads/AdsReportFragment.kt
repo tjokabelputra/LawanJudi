@@ -58,7 +58,7 @@ class AdsReportFragment : Fragment() {
         }
 
         binding?.btnAdsCheck?.setOnClickListener {
-            val ads = binding?.adsEditText?.text.toString()
+            val ads = binding?.adsEditText?.text.toString().trim()
             viewModel.analyzeAds(ads)
         }
     }

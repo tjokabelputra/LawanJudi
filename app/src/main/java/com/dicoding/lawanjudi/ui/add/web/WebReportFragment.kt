@@ -60,7 +60,7 @@ class WebReportFragment : Fragment() {
         }
 
         binding?.btnWebCheck?.setOnClickListener {
-            val url = binding?.urlEditText?.text.toString()
+            val url = binding?.urlEditText?.text.toString().trim()
             viewModel.analyzeWeb(url)
         }
     }

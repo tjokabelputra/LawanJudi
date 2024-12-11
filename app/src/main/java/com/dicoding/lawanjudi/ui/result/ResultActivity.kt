@@ -7,12 +7,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.database.remote.response.AdsPredictReponse
 import com.dicoding.lawanjudi.database.remote.response.WebPredictResponse
@@ -21,12 +22,27 @@ import com.dicoding.lawanjudi.ui.factory.SettingsModelFactory
 import com.dicoding.lawanjudi.ui.home.HomeActivity
 import com.dicoding.lawanjudi.database.SettingPreference
 import com.dicoding.lawanjudi.database.settingsDataStore
+import com.dicoding.lawanjudi.model.Report
+import com.dicoding.lawanjudi.ui.FirebaseViewModel
+import com.dicoding.lawanjudi.database.Result
+import com.dicoding.lawanjudi.database.User
+import com.dicoding.lawanjudi.database.UserPreference
+import com.dicoding.lawanjudi.database.userDataStore
+import com.dicoding.lawanjudi.ui.report.ReportActivity
 import com.dicoding.lawanjudi.ui.settings.SettingViewModel
 import com.dicoding.lawanjudi.util.StringFormatter.percentFormatter
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import java.util.UUID
 
 class ResultActivity : AppCompatActivity() {
     private var _binding: ActivityResultBinding? = null
     private val binding get() = _binding
+
+    val firebaseViewModel : FirebaseViewModel by viewModels()
+
+    lateinit var report: Report
+    lateinit var user: User
 
     private val requestPermissionLauncher =
         registerForActivityResult(
@@ -39,8 +55,16 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding?.root)
         supportActionBar?.hide()
 
+        binding?.pgResult?.visibility = View.GONE
+
         if (Build.VERSION.SDK_INT >= 33) {
             requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+
+        val userPref = UserPreference.getInstance(userDataStore)
+
+        lifecycleScope.launch {
+            user = userPref.getUser().first()
         }
 
         val webRes: WebPredictResponse? = intent.getParcelableExtra(WEB_RES)
@@ -88,12 +112,39 @@ class ResultActivity : AppCompatActivity() {
             binding?.btnNext?.text = if (isChecked) "Kirim" else "Kembali Lapor"
         }
 
+        firebaseViewModel.reportResult.observe(this) { result ->
+            when (result) {
+                is Result.Loading -> {
+                    binding?.pgResult?.visibility = View.VISIBLE
+                }
+                is Result.Success -> {
+                    binding?.pgResult?.visibility = View.GONE
+                    sendReportNotification()
+                    val intent = Intent(this, ReportActivity::class.java)
+                    intent.putExtra(REP, report)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                }
+                is Result.Error -> {
+                    binding?.pgResult?.visibility = View.GONE
+                }
+            }
+        }
+
         binding?.btnNext?.setOnClickListener {
             if (binding?.btnNext?.text == "Kirim") {
-                Log.d("ResultActivity", "Send action triggered")
+                report = Report(
+                    id = UUID.randomUUID().toString(),
+                    name = user.name,
+                    email = user.email,
+                    content = binding?.tvContent?.text.toString(),
+                    description = if(webRes != null) intent.getStringExtra(DESC) else null,
+                    aiConfirmed = webRes?.isJudiOnline == true || adRes?.isJudiOnline == true
+                )
+                firebaseViewModel.saveReport(report)
             } else {
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
             }
         }
@@ -138,6 +189,35 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
+    private fun sendReportNotification(){
+        val pref = SettingPreference.getInstance(settingsDataStore)
+        val settingViewModel = ViewModelProvider(this, SettingsModelFactory(pref))[SettingViewModel::class.java]
+        settingViewModel.getNotificationSettings().observe(this) { isHideNotification: Boolean ->
+            if(!isHideNotification){
+                val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+                val builder = NotificationCompat.Builder(this, CHANNEL_ID)
+                    .setSmallIcon(R.drawable.ic_copy)
+                    .setContentTitle(getString(R.string.report_success))
+                    .setContentText(getString(R.string.report_success_notification))
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setSubText(getString(R.string.subtext_report))
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    val channel = NotificationChannel(
+                        CHANNEL_ID,
+                        CHANNEL_NAME,
+                        NotificationManager.IMPORTANCE_DEFAULT
+                    )
+                    builder.setChannelId(CHANNEL_ID)
+                    notificationManager.createNotificationChannel(channel)
+                }
+
+                val notification = builder.build()
+                notificationManager.notify(NOTIFICATION_ID, notification)
+            }
+        }
+    }
+
     companion object{
         private const val WEB_RES = "webResponse"
         private const val ADS_RES = "adsResponse"
@@ -145,5 +225,6 @@ class ResultActivity : AppCompatActivity() {
         private const val NOTIFICATION_ID = 1
         private const val CHANNEL_ID = "channel_01"
         private const val CHANNEL_NAME = "lawan judi channel"
+        private const val REP = "report"
     }
 }
