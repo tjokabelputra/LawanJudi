@@ -17,11 +17,13 @@
         app:srcCompat="@drawable/gemini1" />
 
     <TextView
-        style="@style/TextContent.Gemini"
         android:id="@+id/tvGreet"
-        android:layout_width="wrap_content"
+        style="@style/TextContent.Gemini"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:text="@string/hello"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 

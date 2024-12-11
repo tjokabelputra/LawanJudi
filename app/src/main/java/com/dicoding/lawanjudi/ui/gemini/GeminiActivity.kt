@@ -1,19 +1,27 @@
 package com.dicoding.lawanjudi.ui.gemini
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.lawanjudi.R
 import com.dicoding.lawanjudi.database.remote.response.ContentRequest
 import com.dicoding.lawanjudi.database.remote.response.ContentsItem
 import com.dicoding.lawanjudi.database.remote.response.Parts
 import com.dicoding.lawanjudi.databinding.ActivityGeminiBinding
 import com.dicoding.lawanjudi.ui.factory.ChatModelFactory
 import com.dicoding.lawanjudi.database.Result
+import com.dicoding.lawanjudi.database.UserPreference
 import com.dicoding.lawanjudi.database.local.entity.ChatEntity
+import com.dicoding.lawanjudi.database.userDataStore
 import com.dicoding.lawanjudi.ui.adapter.ChatAdapter
+import com.dicoding.lawanjudi.ui.home.HomeActivity
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class GeminiActivity : AppCompatActivity() {
     private var _binding: ActivityGeminiBinding? = null
@@ -30,6 +38,13 @@ class GeminiActivity : AppCompatActivity() {
         val factory: ChatModelFactory = ChatModelFactory.getInstance(this)
         val viewModel: GeminiViewModel by viewModels {
             factory
+        }
+
+        val userPref = UserPreference.getInstance(userDataStore)
+
+        lifecycleScope.launch {
+            val user = userPref.getUser().first()
+            binding?.tvGreet?.text = getString(R.string.hello, user.name)
         }
 
         val chatAdapter = ChatAdapter()

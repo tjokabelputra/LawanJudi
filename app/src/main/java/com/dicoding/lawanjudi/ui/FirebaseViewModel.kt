@@ -73,8 +73,8 @@ class FirebaseViewModel : ViewModel() {
                 if (user != null) {
                     val loginUser = LoginResult(
                         message = "Username dan Password Cocok, Siap Untuk Melaporkan Situs/Iklan Judi Online",
-                        username = user.username,
-                        email = user.email
+                        username = user.username ?: "",
+                        email = user.email ?: ""
                     )
                     loginResult.postValue(Result.Success(loginUser))
                 } else {

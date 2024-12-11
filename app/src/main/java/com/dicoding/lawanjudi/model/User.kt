@@ -1,7 +1,7 @@
 package com.dicoding.lawanjudi.model
 
 data class User(
-    val username: String,
-    val email: String,
-    val uid: String
+    val username: String? = null,
+    val email: String? = null,
+    val uid: String? = null
 )

@@ -21,7 +21,7 @@
     <string name="title_ed">Pendidikan mengenai Bahaya Judi Online</string>
     <string name="ed_desc">Informasi mengenai dampak negatif judi online dan bagaimana pengaruhnya terhadap kehidupan pribadi, finansial, dan sosial.</string>
     <string name="askgemini">Bertanya dengan Gemini AI</string>
-    <string name="hello">Halo User</string>
+    <string name="hello">Halo %s</string>
     <string name="greet_desc">Mau nanya apa tentang masalah judi online</string>
     <string name="gemini_hint">Kirim Pesan ke Gemini</string>
     <string name="ask_gemini">Tanya Gemini</string>
