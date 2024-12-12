@@ -10,7 +10,7 @@
         <item name="colorSecondary">@color/lightgrey</item> // User Chat Color
         <item name="colorTertiary">@color/lightpurp</item> // Bot Chat Color
 
-        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorSecondaryVariant">@color/lightpurp</item>
     </style>
 
     <style name="Theme.LawanJudi" parent="Base.Theme.LawanJudi" />

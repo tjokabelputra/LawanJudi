@@ -87,4 +87,7 @@ dependencies {
 
     //Viewpager2
     implementation(libs.androidx.viewpager2)
+
+    //Glide
+    implementation(libs.glide)
 }

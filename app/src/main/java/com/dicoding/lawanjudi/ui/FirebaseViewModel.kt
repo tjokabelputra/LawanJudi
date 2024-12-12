@@ -3,7 +3,9 @@ package com.dicoding.lawanjudi.ui
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dicoding.lawanjudi.database.Result
+import com.dicoding.lawanjudi.database.local.entity.ArticleEntity
 import com.dicoding.lawanjudi.database.local.entity.ReportEntity
+import com.dicoding.lawanjudi.model.Article
 import com.dicoding.lawanjudi.model.LoginResult
 import com.dicoding.lawanjudi.model.Report
 import com.dicoding.lawanjudi.model.User
@@ -20,6 +22,7 @@ class FirebaseViewModel : ViewModel() {
     val loginResult = MutableLiveData<Result<LoginResult>>()
     val reportResult = MutableLiveData<Result<String>>()
     val reportListResult = MutableLiveData<Result<List<ReportEntity>>>()
+    val articleListResult = MutableLiveData<Result<List<ArticleEntity>>>()
 
     private val auth = FirebaseAuth.getInstance()
     private val db: FirebaseDatabase = Firebase.database
@@ -132,6 +135,34 @@ class FirebaseViewModel : ViewModel() {
                 } else {
                     reportListResult.postValue(Result.Error("Reports Not Found"))
                 }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                reportListResult.postValue(Result.Error(error.message))
+            }
+        })
+    }
+
+    fun getArticles(){
+        articleListResult.postValue(Result.Loading)
+        val articleRef = db.reference.child("articles")
+
+        articleRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val articleList = mutableListOf<ArticleEntity>()
+
+                for(childSnapshot in snapshot.children){
+                    val articles = childSnapshot.getValue(Article::class.java)
+                    articles.let { article ->
+                        val articleEntity = ArticleEntity(
+                            content = article?.content.toString(),
+                            imageUrl = article?.img.toString(),
+                            title = article?.title.toString()
+                        )
+                        articleList.add(articleEntity)
+                    }
+                }
+                articleListResult.postValue(Result.Success(articleList))
             }
 
             override fun onCancelled(error: DatabaseError) {

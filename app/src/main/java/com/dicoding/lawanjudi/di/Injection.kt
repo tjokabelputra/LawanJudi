@@ -2,8 +2,10 @@ package com.dicoding.lawanjudi.di
 
 import android.content.Context
 import com.dicoding.lawanjudi.database.AiRepository
+import com.dicoding.lawanjudi.database.ArticleRepository
 import com.dicoding.lawanjudi.database.ChatRepository
 import com.dicoding.lawanjudi.database.ReportRepository
+import com.dicoding.lawanjudi.database.local.room.ArticleDatabase
 import com.dicoding.lawanjudi.database.local.room.ChatDatabase
 import com.dicoding.lawanjudi.database.local.room.ReportDatabase
 import com.dicoding.lawanjudi.database.remote.retrofit.ApiConfig
@@ -25,5 +27,11 @@ object Injection {
         val database = ReportDatabase.getInstance(context)
         val dao = database.reportDao()
         return ReportRepository.getInstance(dao)
+    }
+
+    fun provideArticleRepository(context: Context): ArticleRepository {
+        val database = ArticleDatabase.getInstance(context)
+        val dao = database.articleDao()
+        return ArticleRepository.getInstance(dao)
     }
 }

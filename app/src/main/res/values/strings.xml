@@ -79,8 +79,8 @@
     <string name="check_success">Selamat! Hasil Analisis Anda Benar</string>
     <string name="check_failed">Maaf! Hasil Analisis Anda Salah</string>
     <string name="res_title">Res Title</string>
-    <string name="check_success_desc">%s yang Anda kirimkan terdeteksi sebagai %s judi online dengan tingkat kemiripan %s. Berikut adalah rincian yang Anda kirimkan:</string>
-    <string name="check_failed_desc">%s yang Anda kirimkan tidak terdeteksi sebagai %s judi online dengan tingkat kemiripan %s. Berikut adalah rincian yang Anda kirimkan:</string>
+    <string name="check_success_desc">%s yang Anda kirimkan terdeteksi sebagai %s judi online dengan tingkat keyakinan %s. Berikut adalah rincian yang Anda kirimkan:</string>
+    <string name="check_failed_desc">%s yang Anda kirimkan tidak terdeteksi sebagai %s judi online dengan tingkat keyakinan %s. Berikut adalah rincian yang Anda kirimkan:</string>
     <string name="res_desc">Res Desc</string>
     <string name="type">tipe</string>
     <string name="res_type">%s: </string>
@@ -115,4 +115,5 @@
     <string name="history_desc">Bagian ini berfungsi untuk menampilkan riwayat laporan yang telah Anda kirimkan terkait situs judi online.</string>
     <string name="report_id_title">Laporan %s</string>
     <string name="report_detail">Detail Pelaporan</string>
+    <string name="article_title">Judul Artikel</string>
 </resources>
